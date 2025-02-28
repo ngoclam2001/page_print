@@ -63,6 +63,7 @@ body {
 .content{
     max-width: 850px;
     margin: 0 auto;
+    padding: 0 16px;
 }
 .text_bold{
     font-weight: bold;
@@ -103,6 +104,9 @@ th{
 .hide{
     display: none;
 }
+.list_info{
+    padding-left: 16px;
+}
 @media print {
     .no-print, .no-print * {
         display: none !important;
@@ -111,5 +115,9 @@ th{
         width: 100%; 
         height: auto;
         font-size: 10px;
+    }
+    @page {
+        size: 7in 9.25in;
+        margin: 27mm 16mm 27mm 16mm;
     }
 }

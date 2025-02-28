@@ -186,7 +186,7 @@
                     </table>
                 </div>
                 <!-- Giay chung nhan can ho -->
-                <div class="second_case_asset hide">
+                <div class="second_case_asset">
                     <table class="table_asset_second">
                         <tbody>
                             <tr>
@@ -330,32 +330,26 @@
                 text_first += '<div class="first_land_info"><p>a. Tên tài sản: <span class="asset_name">'+data_asset[i].asset_name+'</span></p><p>b. Diện tích xây dựng: <span class="asset_area">'+data_asset[i].asset_area+'</span></p></div><div class="first_land_info"><p>c. Diện tích sử dụng: <span class="asset_area_use">'+data_asset[i].asset_area_use+'</span></p><p>d. Số tầng: <span class="asset_number_floor">'+data_asset[i].asset_number_floor+'</span></p></div><div class="first_land_info"><p>đ. Kết cấu: <span class="asset_structure">'+data_asset[i].asset_structure+'</span></p><p>e. Cấp công trình: <span class="asset_level">'+data_asset[i].asset_level+'</span></p></div><div class="first_land_info"><p>g. Hình thức sử hữu: <span class="asset_use">'+data_asset[i].asset_use+'</span></p><p>h. Thời hạn sử dụng: <span class="asset_use_time">'+data_asset[i].asset_use_time+'</span></p></div><p>i. Địa chỉ: <span class="asset_address">'+data_asset[i].asset_name+'</span></p>'
             }          
             $(".land_info_asset").append(text_first);
-            var assetCase = 2;
+            var assetCase = '1';
             var text = '';
             for (var i=0;i<data_asset.length;i++){
-                if(assetCase == 1){
+                if(assetCase == '1'){
                     $(".table_asset_first").show();
                     $(".table_asset_second").hide();
-                    text+='<tr><td><p>'+data_asset[i].asset_name+'</p></td><td><p>'+data_asset[i].asset_area+'</p></td><td><p>'+data_asset[i].asset_area_use+'</p></td><td><p>'+data_asset[i].asset_number_floor+'</p></td><td><p>'+data_asset[i].asset_structure+'</p></td><td><p>'+data_asset[i].asset_level+'</p></td><td><p>'+data_asset[i].asset_use+'</p></td><td><p>'+data_asset[i].asset_use_time+'</p></td></tr>'
+                    text+='<tr><td><p>'+data_asset[i].asset_name+'</p></td><td><p>'+data_asset[i].asset_area+'</p></td><td><p>'+data_asset[i].asset_area_use+'</p></td><td><p>'+data_asset[i].asset_number_floor+'</p></td><td><p>'+data_asset[i].asset_structure+'</p></td><td><p>'+data_asset[i].asset_level+'</p></td></tr>'
                     $(".table_asset_first").append(text);
                 }
                 else{
                     $(".table_asset_first").hide();
                     $(".table_asset_second").show();
-                    text+='<tr><td><p>'+data_asset[i].asset_name+'</p></td><td><p>'+data_asset[i].asset_area+'</p></td><td><p>'+data_asset[i].asset_area_use+'</p></td><td><p>'+data_asset[i].asset_number_floor+'</p></td><td><p>'+data_asset[i].asset_use+'</p></td><td><p>'+data_asset[i].asset_use_time+'</p></td></tr>'
+                    text+='<tr><td><p>'+data_asset[i].asset_name+'</p></td><td><p>'+data_asset[i].asset_area+'</p></td><td><p>'+data_asset[i].asset_area_use+'</p></td><td><p>'+data_asset[i].asset_number_floor+'</p></td><td><p>'+data_asset[i].asset_use+'</p></td></tr>'
                     $(".table_asset_second").append(text);
                 }
-            }
+            }            
             console.log('load xong muc 3!!!!');
         }
         function test_muc_4(){
             var data_image = [
-                {
-                    image: "./traffic.jpg"
-                },
-                {
-                    image: "./traffic.jpg"
-                },
                 {
                     image: "./traffic.jpg"
                 },
@@ -364,7 +358,7 @@
             for (var i=0;i<data_image.length;i++){
                 text+='<img src="'+data_image[i].image+'" alt="">'
             }
-            $(".image_land").append(text);
+            $(".image_land").html(text);
             console.log('load xong muc 4!!!!');
         }
         test_muc_4();
