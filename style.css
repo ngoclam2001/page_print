@@ -35,7 +35,6 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    margin: 0 16px;
 }
 .img_top{
     display: flex;
@@ -43,10 +42,10 @@ body {
     align-items: center;
 }
 .img_top img{
-    width: 70px;
+    width: 60px;
 }
 .text_top{
-    font-size: 20px;
+    font-size: 12px;
     margin: 0;
 }
 .text_center{
@@ -95,13 +94,19 @@ p,span{
 th{
     font-weight: normal;
 }
+.fs-10,li,span,p{
+    font-size: 10px;
+}
+.hide{
+    display: none;
+}
 @media print {
     .no-print, .no-print * {
         display: none !important;
     }
     html,body{
-        width: 297mm; 
-        height: 210mm;
+        width: 100%; 
+        height: auto;
         font-size: 10px;
     }
 }
