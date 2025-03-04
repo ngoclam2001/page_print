@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/page_print/style.css">
-    <script src="/page_print/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <div class="container" id="main_content">
         <div class="top_info">
             <div class="img_top">
-                <img src="/page_print/img_re.png" alt="logo">
+                <img src="/img_re.png" alt="logo">
             </div>
             <div class="text_center">
                 <h1 class="text_top text_uppercase">thông tin quyền sử dụng đất,</h1>
@@ -183,7 +183,7 @@
                 },
                 muc_4:{
                     // image: "/page_print/img_re.png",
-                    0: "/page_print/img_re.png",
+                    0: "/img_re.png",
                 }
 
             };
@@ -203,7 +203,7 @@
             table+= '<table class="table_land"><tbody><tr><th><p>Tờ bản đồ số</p></th><th><p>Thửa đất số</p></th><th><p>Diện tích(m2)</p></th><th><p>Loại đất</p></th><th><p>Thời hạn sử dụng</p></th><th><p>Hình thức sử dụng</p> </th><th><p>Nguồn gốc sử dụng đất</p> </th><th><p>Địa chỉ</p> </th></tr>';
             for (const key in data_land.muc_2){
                 if(key != 0){
-                    if(data_land.muc_2[0].is_check == true){
+                    if(data_land.muc_2[0].is_check == false){
                         $(".land_first_case").show();
                         $(".land_second_case").hide();
                         phan_2+='<div class="first_land_info"><p>a. Thừa đất số: <span class="land_number">'+data_land.muc_2[key].land_number+'</span></p><p>tờ bản đồ số: <span class="land_map_number">'+data_land.muc_2[key].land_map_number+'</span></p></div><div class="first_land_info"><p>b. Diện tích: <span class="land_area">'+data_land.muc_2[key].land_area+'</span></p><p>c. Loại đất: <span class="land_class">'+data_land.muc_2[key].land_class+'</span></p></div><p>d. Thời hạn sử dụng: <span class="land_use-date">'+data_land.muc_2[key].land_use_date+'</span></p><p>đ. Hình thức sử dụng: <span class="land_use">'+data_land.muc_2[key].land_use+'</span></p><p>e. Địa chỉ: <span class="land_address">'+data_land.muc_2[key].land_address+'</span></p><p>g. Nguồn gốc sử dụng đất: <span class="land_purpose">'+data_land.muc_2[key].land_purpose+'</span></p>'
@@ -212,41 +212,34 @@
                         $(".land_first_case").hide();
                         $(".land_second_case").show();
                         phan_2+='<tr><td><p>'+data_land.muc_2[key].land_number+'</p></td><td><p>'+data_land.muc_2[key].land_map_number+'</p></td><td><p>'+data_land.muc_2[key].land_area+'</p></td><td><p>'+data_land.muc_2[key].land_class+'</p></td><td><p>'+data_land.muc_2[key].land_use_date+'</p></td><td><p>'+data_land.muc_2[key].land_use+'</p></td><td><p>'+data_land.muc_2[key].land_purpose+'</p></td><td><p>'+data_land.muc_2[key].land_address+'</p></td></tr>'
-                        $('.land_second_case').append(phan_2);
                     }
                 }
             }
-            if(data_land.muc_2[0].is_check == true){
+            if(data_land.muc_2[0].is_check == false){
                 $(".land_first_case").append(phan_2);
             }else{
-                $(".land_first_case").append(table+phan_2+"</tbody></table>");
+                $(".land_second_case").append(table+phan_2+"</tbody></table>");
             }
 
             //load muc 3
             var phan_3 = '';
-            phan_3_c = '<div class="first_land_info"><p>a. Tên tài sản: <span class="asset_name">'+data_land.muc_3[2].asset_area+'</span></p><p>b. Diện tích xây dựng: <span class="asset_build">'+data_land.muc_3[2].asset_area+'</span></p></div><div class="first_land_info"><p>c. Diện tích sử dụng: <span class="asset_use">'+data_land.muc_3[2].asset_area+'</span></p><p>d. Số tầng: <span class="asset_floor">'+data_land.muc_3[2].asset_area+'</span></p></div><div class="first_land_info"><p>đ. Kết cấu: <span class="asset_structre">'+data_land.muc_3[2].asset_area+'</span></p><p>e. Cấp công trình: <span class="asset_level">'+data_land.muc_3[2].asset_area+'</span></p></div><div class="first_land_info"><p>g. Hình thức sử dụng: <span class="asset_use">'+data_land.muc_3[2].asset_area+'</span></p><p>h. Thời hạn sử dụng: <span class="asset_use">'+data_land.muc_3[2].asset_area+'</span></p></div><p>i. Địa chỉ: <span class="asset_address">'+data_land.muc_3[2].asset_area+'</span></p>';
+            var phan_3_c = '<div class="first_land_info"><p>a. Tên tài sản: <span class="asset_name">'+data_land.muc_3[2].asset_area+'</span></p><p>b. Diện tích xây dựng: <span class="asset_build">'+data_land.muc_3[2].asset_area+'</span></p></div><div class="first_land_info"><p>c. Diện tích sử dụng: <span class="asset_use">'+data_land.muc_3[2].asset_area+'</span></p><p>d. Số tầng: <span class="asset_floor">'+data_land.muc_3[2].asset_area+'</span></p></div><div class="first_land_info"><p>đ. Kết cấu: <span class="asset_structre">'+data_land.muc_3[2].asset_area+'</span></p><p>e. Cấp công trình: <span class="asset_level">'+data_land.muc_3[2].asset_area+'</span></p></div><div class="first_land_info"><p>g. Hình thức sử dụng: <span class="asset_use">'+data_land.muc_3[2].asset_area+'</span></p><p>h. Thời hạn sử dụng: <span class="asset_use">'+data_land.muc_3[2].asset_area+'</span></p></div><p>i. Địa chỉ: <span class="asset_address">'+data_land.muc_3[2].asset_area+'</span></p>';
+            $('.land_info_asset').append(phan_3_c);
             for (const key in data_land.muc_3){
                 if(key != 0){
                     if(data_land.muc_3[0].is_check == true){
                         $(".table_asset_first").show();
                         $(".table_asset_second").hide();
-
                         phan_3+='<tr><td><p>'+data_land.muc_3[key].asset_name+'</p></td><td><p>'+data_land.muc_3[key].asset_area+'</p></td><td><p>'+data_land.muc_3[key].asset_area_use+'</p></td><td><p>'+data_land.muc_3[key].asset_number_floor+'</p></td><td><p>'+data_land.muc_3[key].asset_structure+'</p></td><td><p>'+data_land.muc_3[key].asset_level+'</p></td></tr>'
-                        
+                        $(".table_asset_first").append(phan_3);
                     }
                     else{
                         $(".table_asset_first").hide();
                         $(".table_asset_second").show();
-
                         phan_3+='<tr><td><p>'+data_land.muc_3[key].asset_name+'</p></td><td><p>'+data_land.muc_3[key].asset_area+'</p></td><td><p>'+data_land.muc_3[key].asset_area_use+'</p></td><td><p>'+data_land.muc_3[key].asset_number_floor+'</p></td><td><p>'+data_land.muc_3[key].asset_use+'</p></td></tr>'
-                        
+                        $(".table_asset_second").append(phan_3);
                     }
                 }
-            }
-            if(data_land.muc_3[0].is_check == true){
-                $(".table_asset_first").append(phan_3_c+phan_3);
-            }else{
-                $(".table_asset_second").append(phan_3_c+phan_3);
             }
 
             //load muc 4
@@ -261,7 +254,7 @@
 </script>
 <!-- convert to pdf -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" ></script>
-<script src="/page_print/af.min.js"></script>
+<script src="/af.min.js"></script>
  
 
 <script type="text/javascript">
