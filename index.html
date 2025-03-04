@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
-    <script src="/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="/page_print/style.css">
+    <script src="/page_print/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <div class="container" id="main_content">
         <div class="top_info">
             <div class="img_top">
-                <img src="/img_re.png" alt="logo">
+                <img src="/page_print/img_re.png" alt="logo">
             </div>
             <div class="text_center">
                 <h1 class="text_top text_uppercase">thông tin quyền sử dụng đất,</h1>
@@ -35,65 +35,18 @@
                 </li>
                 <!-- TH1: Giay chung nhan cap cho mot thua dat -->
                 <div class="list_land land_first_case hide">
-                    <div class="first_land_info">
-                        <p>a. Thừa đất số: <span class="land_number">01</span></p>
-                        <p>tờ bản đồ số: <span class="land_map_number">100m2</span></p>    
-                    </div>
-                    <div class="first_land_info">
-                        <p>b. Diện tích: <span class="land_area">cac</span></p>
-                        <p>c. Loại đất: <span class="land_class">abc</span></p>
-                    </div>
-                    <p>d. Thời hạn sử dụng: <span class="land_use-date">abc</span></p>
-                    <p>đ. Hình thức sử dụng: <span class="land_use">abc</span></p>
-                    <p>e. Địa chỉ: <span class="land_address">abc</span></p>
-                    <p>g. Nguồn gốc sử dụng đất: <span class="land_purpose ">abc</span></p>
+                    <!-- load from js -->
                 </div>
                 <!-- TH2: Giay chung nhan cho nhieu thua dat nong nghiep -->
                 <div class="list_land land_second_case hide">
-                    <div class="first_land_info">
-                        <p>a. Thừa đất số: <span class="land_number_s">01</span></p>
-                        <p>b. Diện tích: <span class="land_area_s">100m2</span></p>    
-                    </div>
-                    <p>c. Địa chỉ: <span class="land_address_s">abc</span></p>
-                    <div class="table_land">
-                        <table>
-                            <!-- Bang thong tin -->
-                            <tbody class="list_table_land">
-                                <tr>
-                                    <th>
-                                        <p>Tờ bản đồ số</p>
-                                    </th>
-                                    <th>
-                                        <p>Thửa đất số</p>
-                                    </th>
-                                    <th>
-                                        <p>Diện tích(m2)</p>
-                                    </th>
-                                    <th>
-                                        <p>Loại đất</p>
-                                    </th>
-                                    <th>
-                                        <p>Thời hạn sử dụng</p>
-                                    </th>
-                                    <th>
-                                        <p>Hình thức sử dụng</p>
-                                    </th>
-                                    <th>
-                                        <p>Nguồn gốc sử dụng đất</p>
-                                    </th>
-                                    <th>
-                                        <p>Địa chỉ</p>
-                                    </th>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <!-- load from js -->
                 </div>
                 <li class="text_bold">
                     Thông tin tài sản gắn liền với đất:
                 </li>
                 <!-- Cac thong tin lien qan -->
                 <div class="land_info_asset">
+                    <!-- load from js -->
                 </div>
                 <!-- TH1: Giay chung nhan can ho hoac cong trinh -->
                 <div class="first_case_asset">
@@ -119,6 +72,7 @@
                                     <p>Thời hạn sở hữu</p>
                                 </th>
                             </tr>
+                            <!-- load from js -->
                         </tbody>
                     </table>
                 </div>
@@ -143,23 +97,25 @@
                                     <p>Thời hạn sở hữu</p>
                                 </th>
                             </tr>
+                            <!-- load from js -->
                         </tbody>
                     </table>
                 </div>
-          <li class="text_bold" id="page2el">
+                <li class="text_bold" id="page2el">
                     Sơ đồ thửa đất, tài sản gắn liền với đất:
                 </li>
                 <div class="image_land">
-                    
+                    <!-- load from js -->
                 </div>
             </ol>
         </div>
     </div>
     <div class="btn_docx">
-        <button id="downloadBtn">Tạo và tải xuống DOCX</button>
+        <button id="downloadBtn">Tạo và tải xuống DOC</button>
         <button class="btn_print">Tạo và tải xuống PDF</button>
     </div>
 </body>
+<!-- load thong tin -->
 <script>
     $(document).ready(function(){
         function load_muc_1(){
@@ -208,7 +164,7 @@
                 },
             ];
 
-            var landCase = 2;//TH1: 1, TH2: 25  3
+            var landCase = 1;//TH1: 1, TH2: 25  3
             var text = '';
             for (var i=0;i<data_land.length;i++){
                 if(landCase == 1){
@@ -277,7 +233,7 @@
         function load_muc_4(){
             var data_image = [
                 {
-                    image: "./img_re.png"
+                    image: "/page_print/img_re.png"
                 },
             ];
             var text = '';
@@ -299,87 +255,45 @@
         Export2Doc('main_content','mau_giay')
     });
     function Export2Doc(element, filename = '') {
-            var meta= "Mime-Version: 1.0\nContent-Base: " + location.href + "\nContent-Type: Multipart/related; boundary=\"NEXT.ITEM-BOUNDARY\";type=\"text/html\"\n\n--NEXT.ITEM-BOUNDARY\nContent-Type: text/html; charset=\"utf-8\"\nContent-Location: " + location.href + "\n\n<!DOCTYPE html>\n<html>\n_html_</html>";
-            var head= "<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n<style>\n_styles_\n</style>\n</head>\n";
-            var html = document.getElementById(element).innerHTML ;
-            var blob = new Blob(['\ufeff', html], {
-                type: 'application/msword'
-            });
-            var  css = (
-                   '<style>' +
-                   'img {width:300px;}table {border-collapse: collapse; border-spacing: 0;}td{padding: 6px;}' +
-                   '</style>'
-                  );
-            var options = { maxWidth: 624};
-            var images = Array();
-            var img = $(".image_land").find("img");
+            var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
+    var postHtml = "</body></html>";
+    var html = preHtml+document.getElementById(element).innerHTML+postHtml;
+
+    var blob = new Blob(['\ufeff', html], {
+        type: 'application/msword'
+    });
+    
+    // Specify link url
+    var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
+    
+    // Specify file name
+    filename = filename?filename+'.doc':'document.doc';
+    
+    // Create download link element
+    var downloadLink = document.createElement("a");
+
+    document.body.appendChild(downloadLink);
+    
+    if(navigator.msSaveOrOpenBlob ){
+        navigator.msSaveOrOpenBlob(blob, filename);
+    }else{
+        // Create a link to the file
+        downloadLink.href = url;
+        
+        // Setting the file name
+        downloadLink.download = filename;
+        
+        //triggering the function
+        downloadLink.click();
+    }
+    
+    document.body.removeChild(downloadLink);
             
-            for (var i = 0; i < img.length; i++) {
-                // Calculate dimensions of output image
-                var w = Math.min(img[i].width, options.maxWidth);
-                var h = img[i].height * (w / img[i].width);
-                // Create canvas for converting image to data URL
-                var canvas = document.createElement("CANVAS");
-                canvas.width = w;
-                canvas.height = h;
-                // Draw image to canvas
-                var context = canvas.getContext('2d');
-                context.drawImage(img[i], 0, 0, w, h);
-                // Get data URL encoding of image
-                var uri = canvas.toDataURL("image/jpg");
-                $(img[i]).attr("src", img[i].src);
-                img[i].width = w;
-                img[i].height = h;
-                // Save encoded image to array
-                images[i] = {
-                    type: uri.substring(uri.indexOf(":") + 1, uri.indexOf(";")),
-                    encoding: uri.substring(uri.indexOf(";") + 1, uri.indexOf(",")),
-                    location: $(img[i]).attr("src"),
-                    data: uri.substring(uri.indexOf(",") + 1)
-                };
-            }
-
-            // Prepare bottom of mhtml file with image data
-            var imgMetaData = "\n";
-            for (var i = 0; i < images.length; i++) {
-                imgMetaData += "--NEXT.ITEM-BOUNDARY\n";
-                imgMetaData += "Content-Location: " + images[i].location + "\n";
-                imgMetaData += "Content-Type: " + images[i].type + "\n";
-                imgMetaData += "Content-Transfer-Encoding: " + images[i].encoding + "\n\n";
-                imgMetaData += images[i].data + "\n\n";
-                
-            }
-            imgMetaData += "--NEXT.ITEM-BOUNDARY--";
-// end Image Area %%
-
-             var output = meta.replace("_html_", head.replace("_styles_", css) +  html) + imgMetaData;
-
-            var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(output);
-
-
-            filename = filename ? filename + '.docx' : 'document.docx';
-
-
-            var downloadLink = document.createElement("a");
-
-            document.body.appendChild(downloadLink);
-
-            if (navigator.msSaveOrOpenBlob) {
-                navigator.msSaveOrOpenBlob(blob, filename);
-            } else {
-
-                downloadLink.href = url;
-                downloadLink.download = filename;
-                downloadLink.click();
-            }
-
-            document.body.removeChild(downloadLink);
         }
 </script>
 <!-- convert to pdf -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" ></script>
 <script src="/af.min.js"></script>
-
  
 
 <script type="text/javascript">
