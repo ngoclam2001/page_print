@@ -200,7 +200,7 @@
             //load muc 2
             var phan_2 = '';
             var table = '<div class="first_land_info"><p>a. Thừa đất số: <span class="land_number_s">'+data_land.muc_2[1].land_number+'</span></p><p>b. Diện tích: <span class="land_area_s">'+data_land.muc_2[1].land_number+'</span></p></div><p>c. Địa chỉ: <span class="land_address_all">'+data_land.muc_2[1].land_number+'</span></p><p>d. Danh sách các thửa đất:</p>';
-            table+= '<table class="table_asset_second"><tbody><tr><th><p>Tờ bản đồ số</p></th><th><p>Thửa đất số</p></th><th><p>Diện tích(m2)</p></th><th><p>Loại đất</p></th><th><p>Thời hạn sử dụng</p></th><th><p>Hình thức sử dụng</p> </th><th><p>Nguồn gốc sử dụng đất</p> </th><th><p>Địa chỉ</p> </th></tr></tbody></table>';
+            table+= '<table class="table_land"><tbody><tr><th><p>Tờ bản đồ số</p></th><th><p>Thửa đất số</p></th><th><p>Diện tích(m2)</p></th><th><p>Loại đất</p></th><th><p>Thời hạn sử dụng</p></th><th><p>Hình thức sử dụng</p> </th><th><p>Nguồn gốc sử dụng đất</p> </th><th><p>Địa chỉ</p> </th></tr>';
             for (const key in data_land.muc_2){
                 if(key != 0){
                     if(data_land.muc_2[0].is_check == true){
@@ -213,7 +213,7 @@
                         $(".land_first_case").hide();
                         $(".land_second_case").show();
                         phan_2+= table;
-                        phan_2+='<tr><td><p>'+data_land.muc_2[key].land_number+'</p></td><td><p>'+data_land.muc_2[key].land_map_number+'</p></td><td><p>'+data_land.muc_2[key].land_area+'</p></td><td><p>'+data_land.muc_2[key].land_class+'</p></td><td><p>'+data_land.muc_2[key].land_use_date+'</p></td><td><p>'+data_land.muc_2[key].land_use+'</p></td><td><p>'+data_land.muc_2[key].land_purpose+'</p></td><td><p>'+data_land.muc_2[key].land_address+'</p></td></tr>'
+                        phan_2+='<tr><td><p>'+data_land.muc_2[key].land_number+'</p></td><td><p>'+data_land.muc_2[key].land_map_number+'</p></td><td><p>'+data_land.muc_2[key].land_area+'</p></td><td><p>'+data_land.muc_2[key].land_class+'</p></td><td><p>'+data_land.muc_2[key].land_use_date+'</p></td><td><p>'+data_land.muc_2[key].land_use+'</p></td><td><p>'+data_land.muc_2[key].land_purpose+'</p></td><td><p>'+data_land.muc_2[key].land_address+'</p></td></tr></tbody></table>'
                         $('.land_second_case').append(phan_2);
                     }
                 }
