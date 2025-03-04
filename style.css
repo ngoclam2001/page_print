@@ -107,6 +107,16 @@ th{
 .list_info{
     padding-left: 16px;
 }
+.btn_docx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+#downloadBtn{
+    background-color: aquamarine;
+    cursor: pointer;
+}
 @media print {
     .no-print, .no-print * {
         display: none !important;
