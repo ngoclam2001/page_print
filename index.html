@@ -207,21 +207,24 @@
                         $(".land_first_case").show();
                         $(".land_second_case").hide();
                         phan_2+='<div class="first_land_info"><p>a. Thừa đất số: <span class="land_number">'+data_land.muc_2[key].land_number+'</span></p><p>tờ bản đồ số: <span class="land_map_number">'+data_land.muc_2[key].land_map_number+'</span></p></div><div class="first_land_info"><p>b. Diện tích: <span class="land_area">'+data_land.muc_2[key].land_area+'</span></p><p>c. Loại đất: <span class="land_class">'+data_land.muc_2[key].land_class+'</span></p></div><p>d. Thời hạn sử dụng: <span class="land_use-date">'+data_land.muc_2[key].land_use_date+'</span></p><p>đ. Hình thức sử dụng: <span class="land_use">'+data_land.muc_2[key].land_use+'</span></p><p>e. Địa chỉ: <span class="land_address">'+data_land.muc_2[key].land_address+'</span></p><p>g. Nguồn gốc sử dụng đất: <span class="land_purpose">'+data_land.muc_2[key].land_purpose+'</span></p>'
-                        $(".land_first_case").append(phan_2);
                     }
                     else{
                         $(".land_first_case").hide();
                         $(".land_second_case").show();
-                        phan_2+= table;
-                        phan_2+='<tr><td><p>'+data_land.muc_2[key].land_number+'</p></td><td><p>'+data_land.muc_2[key].land_map_number+'</p></td><td><p>'+data_land.muc_2[key].land_area+'</p></td><td><p>'+data_land.muc_2[key].land_class+'</p></td><td><p>'+data_land.muc_2[key].land_use_date+'</p></td><td><p>'+data_land.muc_2[key].land_use+'</p></td><td><p>'+data_land.muc_2[key].land_purpose+'</p></td><td><p>'+data_land.muc_2[key].land_address+'</p></td></tr></tbody></table>'
+                        phan_2+='<tr><td><p>'+data_land.muc_2[key].land_number+'</p></td><td><p>'+data_land.muc_2[key].land_map_number+'</p></td><td><p>'+data_land.muc_2[key].land_area+'</p></td><td><p>'+data_land.muc_2[key].land_class+'</p></td><td><p>'+data_land.muc_2[key].land_use_date+'</p></td><td><p>'+data_land.muc_2[key].land_use+'</p></td><td><p>'+data_land.muc_2[key].land_purpose+'</p></td><td><p>'+data_land.muc_2[key].land_address+'</p></td></tr>'
                         $('.land_second_case').append(phan_2);
                     }
                 }
             }
+            if(data_land.muc_2[0].is_check == true){
+                $(".land_first_case").append(phan_2);
+            }else{
+                $(".land_first_case").append(table+phan_2+"</tbody></table>");
+            }
 
             //load muc 3
             var phan_3 = '';
-            phan_3 = '<div class="first_land_info"><p>a. Tên tài sản: <span class="asset_name">'+data_land.muc_3[2].asset_area+'</span></p><p>b. Diện tích xây dựng: <span class="asset_build">'+data_land.muc_3[2].asset_area+'</span></p></div><div class="first_land_info"><p>c. Diện tích sử dụng: <span class="asset_use">'+data_land.muc_3[2].asset_area+'</span></p><p>d. Số tầng: <span class="asset_floor">'+data_land.muc_3[2].asset_area+'</span></p></div><div class="first_land_info"><p>đ. Kết cấu: <span class="asset_structre">'+data_land.muc_3[2].asset_area+'</span></p><p>e. Cấp công trình: <span class="asset_level">'+data_land.muc_3[2].asset_area+'</span></p></div><div class="first_land_info"><p>g. Hình thức sử dụng: <span class="asset_use">'+data_land.muc_3[2].asset_area+'</span></p><p>h. Thời hạn sử dụng: <span class="asset_use">'+data_land.muc_3[2].asset_area+'</span></p></div><p>i. Địa chỉ: <span class="asset_address">'+data_land.muc_3[2].asset_area+'</span></p>';
+            phan_3_c = '<div class="first_land_info"><p>a. Tên tài sản: <span class="asset_name">'+data_land.muc_3[2].asset_area+'</span></p><p>b. Diện tích xây dựng: <span class="asset_build">'+data_land.muc_3[2].asset_area+'</span></p></div><div class="first_land_info"><p>c. Diện tích sử dụng: <span class="asset_use">'+data_land.muc_3[2].asset_area+'</span></p><p>d. Số tầng: <span class="asset_floor">'+data_land.muc_3[2].asset_area+'</span></p></div><div class="first_land_info"><p>đ. Kết cấu: <span class="asset_structre">'+data_land.muc_3[2].asset_area+'</span></p><p>e. Cấp công trình: <span class="asset_level">'+data_land.muc_3[2].asset_area+'</span></p></div><div class="first_land_info"><p>g. Hình thức sử dụng: <span class="asset_use">'+data_land.muc_3[2].asset_area+'</span></p><p>h. Thời hạn sử dụng: <span class="asset_use">'+data_land.muc_3[2].asset_area+'</span></p></div><p>i. Địa chỉ: <span class="asset_address">'+data_land.muc_3[2].asset_area+'</span></p>';
             for (const key in data_land.muc_3){
                 if(key != 0){
                     if(data_land.muc_3[0].is_check == true){
@@ -229,17 +232,22 @@
                         $(".table_asset_second").hide();
 
                         phan_3+='<tr><td><p>'+data_land.muc_3[key].asset_name+'</p></td><td><p>'+data_land.muc_3[key].asset_area+'</p></td><td><p>'+data_land.muc_3[key].asset_area_use+'</p></td><td><p>'+data_land.muc_3[key].asset_number_floor+'</p></td><td><p>'+data_land.muc_3[key].asset_structure+'</p></td><td><p>'+data_land.muc_3[key].asset_level+'</p></td></tr>'
-                        $(".table_asset_first").append(phan_3);
+                        
                     }
                     else{
                         $(".table_asset_first").hide();
                         $(".table_asset_second").show();
 
                         phan_3+='<tr><td><p>'+data_land.muc_3[key].asset_name+'</p></td><td><p>'+data_land.muc_3[key].asset_area+'</p></td><td><p>'+data_land.muc_3[key].asset_area_use+'</p></td><td><p>'+data_land.muc_3[key].asset_number_floor+'</p></td><td><p>'+data_land.muc_3[key].asset_use+'</p></td></tr>'
-                        $(".table_asset_second").append(phan_3);
+                        
                     }
                 }
-            } 
+            }
+            if(data_land.muc_3[0].is_check == true){
+                $(".table_asset_first").append(phan_3_c+phan_3);
+            }else{
+                $(".table_asset_second").append(phan_3_c+phan_3);
+            }
 
             //load muc 4
             var phan_4 = '';
