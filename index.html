@@ -202,7 +202,7 @@
             var phan_2 = '';
             for (const key in data_land.muc_2){
                 if(key != 0){
-                    if(data_land.muc_2.is_check == true){
+                    if(data_land.muc_2[0].is_check == true){
                         $(".land_first_case").show();
                         $(".land_second_case").hide();
                         phan_2+='<div class="first_land_info"><p>a. Thừa đất số: <span class="land_number">'+data_land.muc_2[key].land_number+'</span></p><p>tờ bản đồ số: <span class="land_map_number">'+data_land.muc_2[key].land_map_number+'</span></p></div><div class="first_land_info"><p>b. Diện tích: <span class="land_area">'+data_land.muc_2[key].land_area+'</span></p><p>c. Loại đất: <span class="land_class">'+data_land.muc_2[key].land_class+'</span></p></div><p>d. Thời hạn sử dụng: <span class="land_use-date">'+data_land.muc_2[key].land_use_date+'</span></p><p>đ. Hình thức sử dụng: <span class="land_use">'+data_land.muc_2[key].land_use+'</span></p><p>e. Địa chỉ: <span class="land_address">'+data_land.muc_2[key].land_address+'</span></p><p>g. Nguồn gốc sử dụng đất: <span class="land_purpose">'+data_land.muc_2[key].land_purpose+'</span></p>'
@@ -221,7 +221,7 @@
             var phan_3 = '';
             for (const key in data_land.muc_3){
                 if(key != 0){
-                    if(data_land.muc_3.is_check == true){
+                    if(data_land.muc_3[0].is_check == true){
                         $(".table_asset_first").show();
                         $(".table_asset_second").hide();
 
