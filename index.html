@@ -182,7 +182,9 @@
                     },
                 },
                 muc_4:{
-                    image: "/page_print/img_re.png"
+                    // image: "/page_print/img_re.png",
+                    0: "/page_print/img_re.png",
+                    1: "/page_print/img_re.png",
                 }
 
             };
@@ -192,7 +194,7 @@
             //load muc 1
             var phan_1 = '';
             for (const key in data_land.muc_1) {
-                phan_1+='<div class="person"><span class="person_name">'+data_land[i].muc_2.muc_1.person_name+'</span>,<span class="person_cccd"> '+data_land[i].muc_1.person_cccd+'</span></div>'
+                phan_1+='<div class="person"><span class="person_name">'+data_land.muc_1[key].person_name+'</span>,<span class="person_cccd"> '+data_land.muc_1[key].person_cccd+'</span></div>'
             }
             $(".list_person").html(phan_1);
 
@@ -203,13 +205,13 @@
                     if(data_land.muc_2.is_check == true){
                         $(".land_first_case").show();
                         $(".land_second_case").hide();
-                        phan_2+='<div class="first_land_info"><p>a. Thừa đất số: <span class="land_number">'+data_land[i].muc_2.land_number+'</span></p><p>tờ bản đồ số: <span class="land_map_number">'+data_land[i].muc_2.land_map_number+'</span></p></div><div class="first_land_info"><p>b. Diện tích: <span class="land_area">'+data_land[i].muc_2.land_area+'</span></p><p>c. Loại đất: <span class="land_class">'+data_land[i].muc_2.land_class+'</span></p></div><p>d. Thời hạn sử dụng: <span class="land_use-date">'+data_land[i].muc_2.land_use_date+'</span></p><p>đ. Hình thức sử dụng: <span class="land_use">'+data_land[i].muc_2.land_use+'</span></p><p>e. Địa chỉ: <span class="land_address">'+data_land[i].muc_2.land_address+'</span></p><p>g. Nguồn gốc sử dụng đất: <span class="land_purpose">'+data_land[i].muc_2.land_purpose+'</span></p>'
+                        phan_2+='<div class="first_land_info"><p>a. Thừa đất số: <span class="land_number">'+data_land.muc_2[key].land_number+'</span></p><p>tờ bản đồ số: <span class="land_map_number">'+data_land.muc_2[key].land_map_number+'</span></p></div><div class="first_land_info"><p>b. Diện tích: <span class="land_area">'+data_land.muc_2[key].land_area+'</span></p><p>c. Loại đất: <span class="land_class">'+data_land.muc_2[key].land_class+'</span></p></div><p>d. Thời hạn sử dụng: <span class="land_use-date">'+data_land.muc_2[key].land_use_date+'</span></p><p>đ. Hình thức sử dụng: <span class="land_use">'+data_land.muc_2[key].land_use+'</span></p><p>e. Địa chỉ: <span class="land_address">'+data_land.muc_2[key].land_address+'</span></p><p>g. Nguồn gốc sử dụng đất: <span class="land_purpose">'+data_land.muc_2[key].land_purpose+'</span></p>'
                         $(".land_first_case").append(phan_2);
                     }
                     else{
                         $(".land_first_case").hide();
                         $(".land_second_case").show();
-                        phan_2+='<tr><td><p>'+data_land[i].muc_2.land_number+'</p></td><td><p>'+data_land[i].muc_2.land_map_number+'</p></td><td><p>'+data_land[i].muc_2.land_area+'</p></td><td><p>'+data_land[i].muc_2.land_class+'</p></td><td><p>'+data_land[i].muc_2.land_use_date+'</p></td><td><p>'+data_land[i].muc_2.land_use+'</p></td><td><p>'+data_land[i].muc_2.land_purpose+'</p></td><td><p>'+data_land[i].muc_2.land_address+'</p></td></tr>'
+                        phan_2+='<tr><td><p>'+data_land.muc_2[key].land_number+'</p></td><td><p>'+data_land.muc_2[key].land_map_number+'</p></td><td><p>'+data_land.muc_2[key].land_area+'</p></td><td><p>'+data_land.muc_2[key].land_class+'</p></td><td><p>'+data_land.muc_2[key].land_use_date+'</p></td><td><p>'+data_land.muc_2[key].land_use+'</p></td><td><p>'+data_land.muc_2[key].land_purpose+'</p></td><td><p>'+data_land.muc_2[key].land_address+'</p></td></tr>'
                         $('.list_table_land').append(phan_2);
                     }
                 }
@@ -223,21 +225,28 @@
                         $(".table_asset_first").show();
                         $(".table_asset_second").hide();
 
-                        phan_3+='<tr><td><p>'+data_land[i].muc_3.asset_name+'</p></td><td><p>'+data_land[i].muc_3.asset_area+'</p></td><td><p>'+data_land[i].muc_3.asset_area_use+'</p></td><td><p>'+data_land[i].muc_3.asset_number_floor+'</p></td><td><p>'+data_land[i].muc_3.asset_structure+'</p></td><td><p>'+data_land[i].muc_3.asset_level+'</p></td></tr>'
+                        phan_3+='<tr><td><p>'+data_land.muc_3[key].asset_name+'</p></td><td><p>'+data_land.muc_3[key].asset_area+'</p></td><td><p>'+data_land.muc_3[key].asset_area_use+'</p></td><td><p>'+data_land.muc_3[key].asset_number_floor+'</p></td><td><p>'+data_land.muc_3[key].asset_structure+'</p></td><td><p>'+data_land.muc_3[key].asset_level+'</p></td></tr>'
                         $(".table_asset_first").append(phan_3);
                     }
                     else{
                         $(".table_asset_first").hide();
                         $(".table_asset_second").show();
 
-                        phan_3+='<tr><td><p>'+data_land[i].muc_3.asset_name+'</p></td><td><p>'+data_land[i].muc_3.asset_area+'</p></td><td><p>'+data_land[i].muc_3.asset_area_use+'</p></td><td><p>'+data_land[i].muc_3.asset_number_floor+'</p></td><td><p>'+data_land[i].muc_3.asset_use+'</p></td></tr>'
+                        phan_3+='<tr><td><p>'+data_land.muc_3[key].asset_name+'</p></td><td><p>'+data_land.muc_3[key].asset_area+'</p></td><td><p>'+data_land.muc_3[key].asset_area_use+'</p></td><td><p>'+data_land.muc_3[key].asset_number_floor+'</p></td><td><p>'+data_land.muc_3[key].asset_use+'</p></td></tr>'
                         $(".table_asset_second").append(phan_3);
                     }
                 }
             } 
 
             //load muc 4
-            $(".image_land").html(data_land.muc_4.image);
+            //load mot anh
+            // $(".image_land").html('img src="'+data_land.muc_4.image+'" alt="">');
+            //load nhieu anh
+            var phan_4 = '';
+            for (const key in data_land.muc_4){
+                phan_4+='<img src="'+data_land.muc_4[key]+'" alt="">';
+            }
+            $(".image_land").html(phan_4);
         }
         load_data();
     })
