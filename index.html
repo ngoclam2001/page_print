@@ -120,7 +120,7 @@
     $(document).ready(function(){
         function load_data(){
             var data_land = {
-                id: "AA 0123456",
+                id: "AA 0987654",
                 muc_1:{
                     1: {
                         person_name: "Nguyễn Văn A",
@@ -136,7 +136,7 @@
                     },
                 },
                 muc_2:{
-                    0: {is_check: true},
+                    0: {is_check: false},
                     1: {
                         land_number: "01",
                         land_map_number: "100m2",
@@ -159,7 +159,7 @@
                     },
                 },
                 muc_3:{
-                    0: {is_check: true},
+                    0: {is_check: false},
                     1: {
                     asset_name: "01",
                     asset_area: "100m2",
@@ -239,9 +239,6 @@
             } 
 
             //load muc 4
-            //load mot anh
-            // $(".image_land").html('img src="'+data_land.muc_4.image+'" alt="">');
-            //load nhieu anh
             var phan_4 = '';
             for (const key in data_land.muc_4){
                 phan_4+='<img src="'+data_land.muc_4[key]+'" alt="">';
